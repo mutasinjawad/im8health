@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IM8Health</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Hero Page -->
+    <script>
+        fetch("hero.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("hero").innerHTML = data;
+            const hoverButton = document.getElementById("visible");
+            const invisibleDiv = document.getElementById("invisible");
+
+            if (hoverButton && invisibleDiv) {
+                hoverButton.addEventListener("mouseover", () => {
+                    invisibleDiv.classList.remove("hide");
+                });
+                invisibleDiv.addEventListener("mouseover", () => {
+                    invisibleDiv.classList.remove("hide");
+                })
+
+                hoverButton.addEventListener("mouseout", () => {
+                    invisibleDiv.classList.add("hide");
+                });
+                invisibleDiv.addEventListener("mouseout", () => {
+                    invisibleDiv.classList.add("hide");
+                })
+            }
+        })
+    </script>
+    <div id="hero"></div>
+
+    <!-- Carasoule -->
+    <script>
+        fetch("carosole.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("carosole").innerHTML = data;
+
+            const sliderTrack = document.getElementById('sliderTrack');
+            sliderTrack.innerHTML += sliderTrack.innerHTML;
+
+            const featureContent = {
+                forbes: {
+                    quote: "“David Beckham Wants To Replace All Your Supplements With IM8.”",
+                    author: "Forbes"
+                },
+                menshealth: {
+                    quote: "“I have personally experienced the positive impact that IM8 has had on my health, energy and focus.”",
+                    author: "David Beckham"
+                },
+                athletech: {
+                    quote: "“IM8 is leaning into science-backed wellness, seeking to position itself as the most effective – and safe – supplement product on the market.”",
+                    author: "Athletech News"
+                },
+                fastcompany: {
+                    quote: "“I wanted to create something that is a one stop shop, one product that actually does it all.”",
+                    author: "David Beckham"
+                },
+                fortune: {
+                    quote: "“We want to help people feel healthy and feel better and live a healthier, longer life.”",
+                    author: "David Beckham"
+                },
+                today: {
+                    quote: "“It's a simple supplement that has the best 92 ingredients in it. It's just easy and it's so good.”",
+                    author: "David Beckham"
+                }
+            };
+
+            const logos = document.querySelectorAll(".feature-logo");
+            const textContainer = document.getElementById("featureTextContainer");
+
+            let currentIndex = 0;
+            let autoCycleInterval;
+
+            function renderFeatureBlock({ quote, author }) {
+                const wrapper = document.createElement("div");
+                wrapper.classList.add("feature-quote-block");
+
+                const quoteEl = document.createElement("p");
+                quoteEl.classList.add("quote");
+                quoteEl.textContent = `${quote}`;
+
+                const authorEl = document.createElement("p");
+                authorEl.classList.add("author-text");
+                authorEl.textContent = `- ${author}`;
+
+                wrapper.appendChild(quoteEl);
+                wrapper.appendChild(authorEl);
+                return wrapper;
+            }
+
+            function selectFeature(index) {
+                const logo = logos[index];
+                if (!logo) return;
+
+                const id = logo.getAttribute("data-id");
+                const content = featureContent[id];
+
+                if (!content) return;
+
+                // Clear and insert new content
+                textContainer.innerHTML = '';
+                textContainer.appendChild(renderFeatureBlock(content));
+
+                // Highlight active
+                logos.forEach(l => l.classList.remove("active"));
+                logo.classList.add("active");
+
+                currentIndex = index;
+                }
+
+                function startAutoCycle() {
+                autoCycleInterval = setInterval(() => {
+                    currentIndex = (currentIndex + 1) % logos.length;
+                    selectFeature(currentIndex);
+                }, 5000);
+                }
+
+                function resetAutoCycle() {
+                clearInterval(autoCycleInterval);
+                startAutoCycle();
+                }
+
+                // Attach event listeners
+                logos.forEach((logo, index) => {
+                logo.addEventListener("click", () => {
+                    selectFeature(index);
+                    resetAutoCycle();
+                });
+                });
+
+                // Init
+                selectFeature(0);
+                startAutoCycle();
+        })
+    </script>
+    <div id="carosole"></div>
+
+    <!-- Analytics -->
+    <img src="/public/bg.jpeg" alt="Background" class="analytics-bg">
+
+    <script>
+        fetch("analytics.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("analytics").innerHTML = data;
+        })
+    </script>
+    <div id="analytics"></div>   
+    
+    <div id="collaborators">
+        <div class="inner-container">
+            <div class="collaborators-card">
+                <!-- Top section -->
+                <div class="collaborators-card-top">
+                    <div class="collaborators-card-top-stamp">
+                        <img src="/public/collaborators/3rd-party-tested.svg" alt="">
+                        <img src="/public/collaborators/non-gmo.svg" alt="">
+                    </div>
+
+                    <div class="collaborators-card-top-points">
+                        <div class="collaborators-card-top-point">
+                            <img src="/public/bullet-point.svg" alt="">
+                            <p>Vegan</p>
+                        </div>
+
+                        <div class="collaborators-card-top-point">
+                            <img src="/public/bullet-point.svg" alt="">
+                            <p>Allergen-free</p>
+                        </div>
+
+                        <div class="collaborators-card-top-point">
+                            <img src="/public/bullet-point.svg" alt="">
+                            <p>Gluten-free</p>
+                        </div>
+
+                        <div class="collaborators-card-top-point">
+                            <img src="/public/bullet-point.svg" alt="">
+                            <p>No artificial flavors</p>
+                        </div>
+
+                        <div class="collaborators-card-top-point">
+                            <img src="/public/bullet-point.svg" alt="">
+                            <p>No added sugar</p>
+                        </div>
+
+                        <div class="collaborators-card-top-point">
+                            <img src="/public/bullet-point.svg" alt="">
+                            <p>No artificial sweeteners</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom section -->
+                <div class="collaborators-card-bottom">
+                    <p>Our Collaborators</p>
+                    <div class="collaborators-card-bottom-logos">
+                        <img src="/public/collaborators/spaceapplications_logo.svg" alt="">
+                        <img src="/public/collaborators/university-of-oxford-logo.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCIENTIFIC EXPERTISE -->
+    <script src="science_experts.js"></script>
+    <script>
+        fetch("scientist.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("science").innerHTML = data;
+
+            const grid = document.querySelector('.expertise-grid');
+            if (!grid || typeof experts === 'undefined') return;
+
+            // Clear any existing cards
+            grid.innerHTML = '';
+
+            experts.forEach(expert => {
+                const card = document.createElement('div');
+                card.classList.add('expert-card');
+
+                card.innerHTML = `
+                    <img src="${expert.image}" alt="${expert.name}" class="expert-img">
+                    <div class="expert-details">
+                        <div>${expert.name}</div>
+                        <span class="expert-details-description">${expert.designation}</span>
+                    </div>
+                    <div class="expert-card-expand">
+                        <img src="/public/octagon-icon.svg" alt="Expand">
+                    </div>
+                `;
+
+                grid.appendChild(card);
+            });
+        })
+    </script>
+    <div id="science"></div>
+
+    <!-- A Note from David Beckham -->
+    <script>
+        fetch("david-note.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("david-note").innerHTML = data;
+        })
+    </script>
+    <div id="david-note"></div>
+
+    <!-- Replace your drink -->
+    <script>
+        fetch("replace.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("replace").innerHTML = data;
+        })
+    </script>
+    <div id="replace"></div>
+
+    <!-- Ingredients -->
+    <script src="ingredients.js"></script>
+    <section id="ingredients" class="container2 replace-bg">
+        <div class="inner-container">
+            <div class="ingredients-grid">
+                <div class="ingredients-card">
+                    <div class="replace-img">
+                        <img src="/public/replace/1.png" alt="" class="replace-img">
+                    </div>
+                    <div class="ingredients-details">
+                        <div>Multivitamin & Minerals</div>
+                        <span class="ingredients-details-description">Complete spectrum of essential vitamins and minerals</span>
+                    </div>
+                    <div class="ingredients-card-expand">
+                        <img src="/public/octagon-icon.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const grid2 = document.querySelector('.ingredients-grid');
+            if (!grid2 || typeof ingredients === 'undefined') return;
+            grid2.innerHTML = '';
+            console.log(grid2)
+
+            ingredients.forEach(ingredient => {
+                console.log(ingredient)
+                const card = document.createElement('div');
+                card.classList.add('ingredients-card');
+
+                card.innerHTML = `
+                    <img src="${ingredient.image}" alt="${ingredient.name}" class="replace-img">
+                    <div class="ingredients-details">
+                        <div>${ingredient.name}</div>
+                        <span class="ingredients-details-description">${ingredient.title}</span>
+                    </div>
+                    <div class="ingredients-card-expand">
+                        <img src="/public/octagon-icon.svg" alt="Expand">
+                    </div>
+                `;
+
+                grid2.appendChild(card);
+            });
+        });
+    </script>
+</body>
+</html>
