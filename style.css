@@ -51,12 +51,12 @@ body {
     padding: 0 16px;
 }
 
-.flex-col {
-    flex-direction: column;
-}
-
 @media (min-width: 1200px) {
     .inner-container { max-width: 1400px; }
+}
+
+.flex-col {
+    flex-direction: column;
 }
 
 .align-center {
@@ -79,6 +79,10 @@ body {
 
 .box-margin-bottom {
     margin-bottom: 50px;
+}
+
+.box-padding-bottom {
+    padding-bottom: 100px;
 }
 
 .box-padding-top {
@@ -707,6 +711,7 @@ body {
     width: 1000px;
     height: fit-content;
     background-color: #FFF6F5;
+    color:black;
     border: 1px solid black;
     border-radius: 10px;
     padding: 40px 50px;
@@ -1222,6 +1227,7 @@ body {
 .annual-savings-cards {
     display: flex;
     flex-direction: column;
+    gap: 20px;
     width: 100%;
 }
 .annual-savings-description-text {
@@ -1237,6 +1243,8 @@ body {
 .annual-savings-card {
     display: flex;
     flex-direction: column;
+    align-items: end;
+    justify-items: end;
     gap: 20px;
     padding: 20px;
     background-color: white;
@@ -1247,7 +1255,6 @@ body {
 
 .annual-button {
     display: flex;
-    gap: 20px;
     width: 100%;
     height: fit-content;
     color: black;
@@ -1299,4 +1306,326 @@ body {
 .annual-button-description p {
     font-size: 18px;
     font-weight: 600;
+}
+
+.annual-details {
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+    align-items: start;
+    justify-items: start;
+}
+
+.annual-details-cards {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    align-items: start;
+    justify-items: start;
+}
+
+.annual-details-card {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: white;
+    background-color: #9E0B0F;
+    border-radius: 50px;
+    padding: 8px 30px;
+}
+
+.annual-details-description {
+    font-size: 13px;
+    font-weight: 300;
+    color:#3a3a3a
+}
+
+.annual-details-dosages-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #50000B;
+}
+
+.annual-details-dosages-lists {
+    width: 100%;
+    padding-left: 50px;
+    margin-top: 17px;
+    font-size: 13px;
+    color: #3a3a3a;
+}
+
+/* ----------------------- Beyond ------------------------- */
+.beyond-container {
+    width: 100%;
+    height: 845px;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    gap: 20px;
+}
+
+.beyond-inner-container {
+    color: white;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    gap: 20px;
+    padding: 0 16px;
+}
+
+@media (min-width: 1200px) {
+    .beyond-inner-container { max-width: 1400px; }
+}
+
+.beyond-image {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: start;
+    justify-items: start;
+}
+.beyond-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.bg-beyond {
+    background-color: #F9E9D8;
+}
+
+.beyond-text {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: end;
+    gap: 40px;
+}
+.beyond-text h2 {
+    font-family: "Crimson Text", serif;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #50000B;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.beyond-text-points {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.beyond-text-point {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+    color:black;
+}
+
+.beyond-text-point-icon {
+    width: 30px;
+    height: 30px;
+}
+.beyond-text-point-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* ----------------------------- Comparison ----------------------------- */
+.bg-comparison {
+    background-color: #F5EAEA;
+}
+
+.comparison-title {
+    width: 600px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+    color: black;
+}
+
+.comparison-title-text {
+    font-family: "Crimson Text", serif;
+    font-size: 30px;
+    font-weight: 200;
+    text-align: center;
+    line-height: 1.2;
+    color: #50000B;
+}
+
+.comparison-title p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 2;
+}
+
+.beyond-comment {
+    position: relative;
+    transform: translateY(-50%);
+    width: 1000px;
+    height: fit-content;
+    background-color: #FFF6F5;
+    color:black;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 40px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.compare-inner-container {
+    color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
+}
+
+@media (min-width: 1200px) {
+    .compare-inner-container { max-width: 1400px; }
+}
+
+.comparison-description {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.comparison-description-title {
+    background-color: #50000B;
+    color: white;
+    padding: 10px 16px 16px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.comparison-description-title-left {
+    position: relative;
+    padding-left: 40px;
+    padding-right: 40px;
+    width: 50%;
+    text-align: left;
+}
+
+.comparison-description-title-right {
+    position: relative;
+    width: 50%;
+    padding-left: 40px;
+    padding-right: 40px;
+    text-align: left;
+}
+
+.comparison-description-title-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(-70%);
+    width: 85px;
+    height: auto;
+}
+.comparison-description-title-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.comparison-margin-bottom {
+    margin-bottom: 160px;
+}
+
+.comparison-description-points {
+    width: 100%;
+    display: flex;
+}
+
+.comparison-description-left-points {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+}
+
+.comparison-description-left-point {
+    width: 100%;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    padding: 10px 10px 10px 48px;
+    justify-content: start;
+    gap: 20px;
+    color:#50000B;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.comparison-description-subpoints {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: left;
+}
+.comparison-description-subpoints span {
+    font-weight: 300;
+    font-size: 12px;
+}
+
+.comparison-description-right-points {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+}
+
+.comparison-description-right-point {
+    width: 100%;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    padding: 10px 10px 10px 48px;
+    justify-content: start;
+    gap: 20px;
+    background-color: #BFC7C3;
+    color:#18332A;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.comparison-description-right-point-disabled {
+    width: 100%;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    padding: 10px 10px 10px 48px;
+    justify-content: start;
+    gap: 20px;
+    background-color: #BFC7C3;
+    color:#4B625A;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
 }
