@@ -271,7 +271,7 @@
     <!-- Ingredients -->
     <script src="ingredients.js"></script>
     <section id="ingredients" class="container2 replace-bg">
-        <div class="inner-container">
+        <div class="inner-container flex-col">
             <div class="ingredients-grid">
                 <div class="ingredients-card">
                     <div class="replace-img">
@@ -286,34 +286,71 @@
                     </div>
                 </div>
             </div>
+            <div class="button-container">
+                View All
+            </div>
         </div>
     </section>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const grid2 = document.querySelector('.ingredients-grid');
+            const button = document.querySelector('.button-container');
+
             if (!grid2 || typeof ingredients === 'undefined') return;
-            grid2.innerHTML = '';
-            console.log(grid2)
 
-            ingredients.forEach(ingredient => {
-                console.log(ingredient)
-                const card = document.createElement('div');
-                card.classList.add('ingredients-card');
+            let showingAll = false;
 
-                card.innerHTML = `
-                    <img src="${ingredient.image}" alt="${ingredient.name}" class="replace-img">
-                    <div class="ingredients-details">
-                        <div>${ingredient.name}</div>
-                        <span class="ingredients-details-description">${ingredient.title}</span>
-                    </div>
-                    <div class="ingredients-card-expand">
-                        <img src="/public/octagon-icon.svg" alt="Expand">
-                    </div>
-                `;
+            const renderIngredients = () => {
+                grid2.innerHTML = '';
+                const itemsToShow = showingAll ? ingredients : ingredients.slice(0, 8);
 
-                grid2.appendChild(card);
+                itemsToShow.forEach(ingredient => {
+                    const card = document.createElement('div');
+                    card.classList.add('ingredients-card');
+
+                    card.innerHTML = `
+                        <img src="${ingredient.image}" alt="${ingredient.name}" class="replace-img">
+                        <div class="ingredients-details">
+                            <div>${ingredient.name}</div>
+                            <span class="ingredients-details-description">${ingredient.title}</span>
+                        </div>
+                        <div class="ingredients-card-expand">
+                            <img src="/public/octagon-icon.svg" alt="Expand">
+                        </div>
+                    `;
+
+                    grid2.appendChild(card);
+                });
+
+                button.textContent = showingAll ? 'View Less' : 'View All';
+            };
+
+            renderIngredients();
+            button.addEventListener('click', () => {
+                showingAll = !showingAll;
+                renderIngredients();
             });
         });
     </script>
+
+    <!-- Monthly Breakdown -->
+    <script>
+        fetch("breakdown.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("breakdown").innerHTML = data;
+        })
+    </script>
+    <div id="breakdown"></div>
+
+    <!-- Annual Savings -->
+    <script>
+        fetch("annual-savings.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("annual-savings").innerHTML = data;
+        })
+    </script>
+    <div id="annual-savings"></div>
 </body>
 </html>

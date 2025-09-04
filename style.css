@@ -44,6 +44,7 @@ body {
 .inner-container {
     color: white;
     width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -946,6 +947,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 20px;
+    text-align: center;
     font-weight: 600;
     line-height: 1.3;
     color: black;
@@ -963,4 +965,322 @@ body {
     position: absolute;
     top: 2%;
     right: 2%;
+}
+
+/* --------------------------- Ingredients --------------------------- */
+.button-container {
+    background-color: #A40011;
+    color: white;
+    margin-top: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px 100px;
+    border-radius: 50px;
+    transition: all ease 0.3s;
+}
+.button-container:hover {
+    cursor: pointer;
+    background-color: #50000B;
+}
+
+/* ------------------------------ Monthly Breakdown ------------------------------ */
+.breakdown-container {
+    position: relative;
+    padding: 50px 50px;
+    height: 705px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F5EAEA;
+    overflow: hidden;
+}
+
+.breakdown-bg {
+    position: absolute;
+    top: 0;
+    left: -20vw;
+    padding: 50px 50px;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.breakdown-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: opacity(0.2);
+}
+
+.breakdown-text {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 30px;
+    color: #50000B;
+}
+
+.breakdown-text h2{
+    font-family: "Crimson Text", serif;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #50000B;
+}
+
+.breakdown-text-button {
+    width: fit-content;
+    background-color: #A40011;
+    color: white;
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px 40px;
+    border-radius: 50px;
+    transition: all ease 0.3s;
+}
+
+.breakdown-text-button:hover {
+    cursor: pointer;
+    background-color: #50000B;
+}
+
+.breakdown-photo {
+    height: 100%;
+    width: auto;
+    z-index: 1;
+}
+
+.breakdown-photo img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.breakdown-inner-container {
+    color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+}
+
+@media (min-width: 1200px) {
+    .breakdown-inner-container { max-width: 1400px; }
+}
+
+.breakdown-details {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: start;
+    justify-content: center;
+}
+
+.breakdown-details-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 20px;
+}
+
+.breakdown-details-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    color: #50000B;
+}
+.breakdown-details-item h3 {
+    font-weight: 400;
+}
+.breakdown-details-item p {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.breakdown-details-total-cost {
+    width: fit-content;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.breakdown-details-total-top {
+    display: flex;
+    align-items: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border: 1px solid #50000B;
+    padding: 10px 25px 10px 25px;
+    justify-content: space-between;
+    gap: 100px;
+    color: #50000B;
+}
+
+.breakdown-details-total-top h3 {
+    font-weight: 400;
+}
+
+.breakdown-details-total-top span {
+    font-weight: 600;
+}
+
+.breakdown-details-total-bottom {
+    display: flex;
+    align-items: center;
+    padding: 10px 25px 10px 25px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    justify-content: space-between;
+    border: 1px solid #50000B;
+    border-top: 0px solid transparent;
+    gap: 100px;
+    background-color: white;
+    color: #50000B;
+}
+.breakdown-details-total-bottom span {
+    font-weight: 600;
+}
+
+/* ------------------------------------- Annual Savings ------------------------------------ */
+.top-card {
+    width: 100%;
+    height: 360px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+
+.annual-card {
+    background-color: #9E0B0F;
+    height: 250px;
+    width: 100%;
+    gap: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+.annual-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+}
+
+@media (min-width: 1200px) {
+    .annual-container { max-width: 1400px; }
+}
+
+.annual-card-title {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.annual-card-amount {
+    font-size: 45px;
+    font-weight: 500;
+}
+
+.annual-card-description {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.annual-savings-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.annual-savings-title-text {
+    width: 800px;
+    font-family: "Crimson Text", serif;
+    font-size: 45px;
+    margin: 34px 0px 20px 0px;
+    color: #50000B;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+.annual-savings-cards {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.annual-savings-description-text {
+    width: 800px;
+    font-size: 18px;
+    font-weight: 300;
+    color: black;
+    text-align: center;
+    line-height: 1.6;
+    margin-bottom: 60px;
+}
+
+.annual-savings-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+    border: black 1px solid;
+    transition: all ease 0.3s;
+}
+
+.annual-button {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    height: fit-content;
+    color: black;
+    user-select: none;
+}
+.annual-savings-card:hover {
+    cursor: pointer;
+    background-color: #FFF2F0;
+}
+
+.annual-button-title {
+    width: 20%;
+    height: 100%;
+    font-size: 48px;
+}
+.annual-button-description {
+    width: 70%;
+    height: 100%;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.5;
+}
+.annual-button-button {
+    width: 10%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.annual-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: black;
 }
