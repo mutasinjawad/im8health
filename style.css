@@ -1283,4 +1283,20 @@ body {
     flex-direction: column;
     gap: 20px;
     color: black;
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    transition: height 0.3s ease, opacity 0.3s ease;
+}
+.annual-details.show {
+  opacity: 1;
+}
+
+.annual-button-description div {
+    font-size: 18px;
+    font-weight: 400;
+}
+.annual-button-description p {
+    font-size: 18px;
+    font-weight: 600;
 }
